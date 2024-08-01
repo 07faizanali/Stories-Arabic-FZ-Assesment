@@ -1,0 +1,162 @@
+/* styles.css */
+
+/* Basic Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+}
+
+header {
+    background: #333;
+    color: #fff;
+    padding: 1rem 0;
+    text-align: center;
+}
+
+nav ul {
+    list-style: none;
+}
+
+nav ul li {
+    display: inline;
+    margin: 0 15px;
+}
+
+nav ul li a {
+    color: #fff;
+    text-decoration: none;
+}
+
+main {
+    padding: 2rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.product-page {
+    display: flex;
+    flex-wrap: wrap;
+    width: 100%;
+    max-width: 1200px;
+    margin-bottom: 2rem;
+}
+
+.product-images, .product-details {
+    flex: 1;
+    padding: 1rem;
+}
+
+.product-images {
+    max-width: 600px;
+}
+
+#main-image {
+    width: 100%;
+    height: auto;
+    margin-bottom: 10px;
+}
+
+.thumbnail-images {
+    display: flex;
+    justify-content: space-around;
+}
+
+.thumbnail-images img {
+    width: 100px;
+    height: auto;
+    cursor: pointer;
+}
+
+.product-details {
+    max-width: 600px;
+}
+
+.product-details h1 {
+    margin-bottom: 10px;
+}
+
+.price {
+    font-size: 1.5rem;
+    color: #e67e22;
+    margin-bottom: 10px;
+}
+
+.description {
+    margin-bottom: 20px;
+}
+
+button {
+    padding: 10px 20px;
+    background: #333;
+    color: #fff;
+    border: none;
+    cursor: pointer;
+}
+
+button:hover {
+    background: #555;
+}
+
+.customer-reviews, .related-products {
+    width: 100%;
+    max-width: 1200px;
+    margin-bottom: 2rem;
+    padding: 1rem;
+}
+
+.customer-reviews h2, .related-products h2 {
+    margin-bottom: 1rem;
+}
+
+.review {
+    margin-bottom: 1rem;
+}
+
+.related-product {
+    display: inline-block;
+    width: 200px;
+    text-align: center;
+    margin: 0 10px;
+}
+
+.related-product img {
+    width: 100%;
+    height: auto;
+}
+
+
+.gold-star {
+    color: gold;
+}
+.footer {
+    background-color: #333;
+    color: #fff;
+    padding: 20px 0;
+    text-align: center;
+}
+.footer p {
+    margin: 0;
+}
+
+
+@media (max-width: 768px) {
+    nav ul li {
+        display: block;
+        margin: 10px 0;
+    }
+
+    .product-page {
+        flex-direction: column;
+    }
+
+    .related-product {
+        margin-bottom: 20px;
+    }
+}
