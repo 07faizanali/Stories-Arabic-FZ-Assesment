@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cart</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <link rel="stylesheet" href="styles.css">
+    
+    <!-- Bootstrap and FontAwesome JS -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script src="https://kit.fontawesome.com/a076d05399.js"></script>
+</head>
+<body>
+    <header>
+        <nav class="navbar navbar-expand-lg navbar-light bg-light">
+            <a class="navbar-brand" href="#">Smartwatch Store</a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav mr-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="index.html"><i class="fas fa-home"></i> Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="product.html"><i class="fas fa-shopping-bag"></i> Purchase</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="contact.html"><i class="fas fa-phone"></i>Contact Us</a>
+                    </li>
+                </ul>
+                <ul class="navbar-nav ml-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="cart.html"><i class="fas fa-shopping-cart"></i> Cart</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="signup.html"><i class="fas fa-sign-in-alt"></i> Login | Sign Up <i class="fas fa-user-plus"></i></a>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+        <div class="container mt-5">
+            <h1>Your Cart</h1>
+            <div id="cart-items" class="row">
+                <!-- Cart items will be displayed here -->
+            </div>
+            <button class="btn btn-primary" onclick="clearCart()">Clear Cart</button>
+        </div>
+    </main>
+
+    <footer class="footer mt-5">
+        <div class="container text-center">
+            <div class="row">
+                <div class="col-md-4">
+                    <p>&copy; 2024 Smartwatch Store. All rights reserved.</p>
+                </div>
+                <div class="col-md-4">
+                    <p><i class="fas fa-shield-alt"></i> Secure Checkout</p>
+                </div>
+                <div class="col-md-4">
+                    <p><i class="fas fa-undo-alt"></i> 30-Day Return Policy</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Function to display cart items
+      // Function to display cart items
+function displayCartItems() {
+    const cart = JSON.parse(localStorage.getItem('cart')) || [];
+    const cartItemsContainer = document.getElementById('cart-items');
+
+    cartItemsContainer.innerHTML = '';
+
+    cart.forEach((item, index) => {
+        const itemElement = document.createElement('div');
+        itemElement.className = 'col-md-4';
+        itemElement.innerHTML = `
+            <div class="card mb-4">
+                <img src="${item.image}" class="card-img-top" alt="${item.name}">
+                <div class="card-body">
+                    <h5 class="card-title">${item.name}</h5>
+                    <p class="card-text">$${item.price}</p>
+                    <p class="card-text">Quantity: ${item.quantity || 1}</p>
+                    <button class="btn btn-danger" onclick="removeFromCart(${index})">Remove</button>
+                </div>
+            </div>
+        `;
+        cartItemsContainer.appendChild(itemElement);
+    });
+}
+
+    
+        // Function to remove item from cart
+      // Function to remove item from cart
+function removeFromCart(index) {
+    let cart = JSON.parse(localStorage.getItem('cart')) || [];
+    const item = cart[index];
+
+    if (item.quantity > 1) {
+        // Decrease the quantity
+        item.quantity--;
+    } else {
+        // Remove item if quantity is 1
+        cart.splice(index, 1);
+    }
+
+    localStorage.setItem('cart', JSON.stringify(cart));
+    displayCartItems();
+}
+
+    
+        // Function to clear cart
+        function clearCart() {
+            localStorage.removeItem('cart');
+            displayCartItems();
+        }
+    
+        // Display cart items on page load
+        window.onload = displayCartItems;
+    </script>
+    
+</body>
+</html>

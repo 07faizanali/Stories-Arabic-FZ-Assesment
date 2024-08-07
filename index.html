@@ -3,17 +3,12 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Smartwatch Product Page</title>
+    <title>Smartwatch Store</title>
     <!-- Bootstrap CSS -->
     <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
     <link rel="stylesheet" href="styles.css">
-    <script src="script.js"></script>
-        <!-- Bootstrap and FontAwesome JS -->
-        <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
-        <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
-        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
-        <script src="https://kit.fontawesome.com/a076d05399.js"></script>
+    <!-- FontAwesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
 </head>
 <body>
     <header>
@@ -25,106 +20,77 @@
             <div class="collapse navbar-collapse" id="navbarNav">
                 <ul class="navbar-nav mr-auto">
                     <li class="nav-item">
-                        <a class="nav-link" href="#home"><i class="fas fa-home"></i> Home</a>
+                        <a class="nav-link" href="index.html"><i class="fas fa-home"></i> Home</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="#features"><i class="fas fa-cogs"></i> Features</a>
                     </li>
+                   
                     <li class="nav-item">
-                        <a class="nav-link" href="#testimonials"><i class="fas fa-comments"></i> Testimonials</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#purchase"><i class="fas fa-shopping-bag"></i> Purchase</a>
+                        <a class="nav-link" href="product.html"><i class="fas fa-shopping-bag"></i> Purchase</a>
                     </li>
                 </ul>
                 <ul class="navbar-nav ml-auto">
+                    
+                 
                     <li class="nav-item">
-                        <a class="nav-link" href="#cart"><i class="fas fa-shopping-cart"></i> Cart</a>
+                        <a class="nav-link" href="signup.html"><i class="fas fa-sign-in-alt"></i> Login | Sign Up <i class="fas fa-user-plus"></i></a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#login"><i class="fas fa-sign-in-alt"></i> Login</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#signup"><i class="fas fa-user-plus"></i> Sign Up</a>
+                        <a class="nav-link" href="cart.html"><i class="fas fa-shopping-cart"></i> Cart</a>
                     </li>
                 </ul>
             </div>
         </nav>
     </header>
 
-    <main>
-        <div class="product-page">
-            <div class="product-images">
-                <img id="main-image" src="smartwatch6.jpg" alt="smartwatch">
-                
-                <div class="thumbnail-images">
-                    <img src="./smartwatch3.jpg" alt="Smartwatch Thumbnail 4" onclick="changeImage('./smartwatch3.jpg')">
-                    <img src="./smartwatch5.jpg" alt="Smartwatch Thumbnail 1" onclick="changeImage('./smartwatch5.jpg')">
-                    <img src="./smartwatch6.jpg" alt="Smartwatch Thumbnail 2" onclick="changeImage('./smartwatch6.jpg')">
-                    <img src="./smartwatch4.jpg" alt="Smartwatch Thumbnail 3" onclick="changeImage('./smartwatch4.jpg')">
-                </div>
+    <main id="home">
+        <section class="hero text-center text-white">
+            <div class="container">
+                <h1 class="display-4">Welcome to Smartwatch Store</h1>
+                <p class="lead">Discover the latest in wearable technology with our range of smartwatches.</p>
+                <a href="product.html" class="btn btn-primary btn-lg">Shop Now</a>
             </div>
-            <div class="product-details">
-                <h1>Smartwatch XYZ</h1>
-                <p class="price">$199.99</p>
-                <p class="description">
-                    Experience the future of wearable technology with Smartwatch XYZ. Packed with features including heart rate monitoring, GPS tracking, and more.
-                </p>
-                <button>Add to Cart</button>
-            </div>
-        </div>
+        </section>
 
-        <div class="customer-reviews">
-            <h2>Customer Reviews</h2>
-            <div class="review card mb-3">
-                <div class="card-body">
-                    <h5 class="card-title">Customer A</h5>
-                    <p class="card-text">
-                        <span class="gold-star">&#9733;</span>
-                        <span class="gold-star">&#9733;</span>
-                        <span class="gold-star">&#9733;</span>
-                        <span class="gold-star">&#9733;</span>
-                        <span class="gold-star">&#9733;</span>
-                    </p>
-                    <p class="card-text">"This smartwatch is amazing! The battery life is incredible."</p>
+        <section id="features" class="py-5">
+            <div class="container">
+                <div class="row text-center">
+                    <div class="col-md-4">
+                        <div class="feature-card">
+                            <i class="fas fa-heartbeat fa-3x"></i>
+                            <h3>Heart Rate Monitoring</h3>
+                            <p>Keep track of your heart rate in real-time with our advanced sensors.</p>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="feature-card">
+                            <i class="fas fa-bicycle fa-3x"></i>
+                            <h3>Activity Tracking</h3>
+                            <p>Monitor your daily activities and reach your fitness goals.</p>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="feature-card">
+                            <i class="fas fa-map-marker-alt fa-3x"></i>
+                            <h3>GPS Navigation</h3>
+                            <p>Get accurate navigation and location tracking wherever you go.</p>
+                        </div>
+                    </div>
                 </div>
             </div>
-            <div class="review card mb-3">
-                <div class="card-body">
-                    <h5 class="card-title">Customer B</h5>
-                    <p class="card-text">
-                        <span class="gold-star">&#9733;</span>
-                        <span class="gold-star">&#9733;</span>
-                        <span class="gold-star">&#9733;</span>
-                        <span class="gold-star">&#9733;</span>
-                        <span class="gold-star">&#9734;</span>
-                    </p>
-                    <p class="card-text">"Great features and design, but the price is a bit high."</p>
-                </div>
-            </div>
-            <!-- Add more reviews as needed -->
-        </div>
+        </section>
 
-        <div class="related-products">
-            <h2>Related Products</h2>
-          
-            <div class="related-product">
-                <img src="./related.jpg" alt="Related Product 1">
-                <p>Related Product 3</p>
-                <p>$149.99</p>
+        <section id="about" class="text-center py-5">
+            <div class="container">
+                <h2>About Us</h2>
+                <p>Welcome to Smartwatch Store! We are a leading retailer in wearable technology, specializing in the latest smartwatches designed to enhance your lifestyle. Our mission is to provide high-quality products with cutting-edge features and exceptional customer service.</p>
+        <p>Founded in 2020, we have quickly become a trusted name in the industry, thanks to our commitment to innovation and customer satisfaction. Whether you are looking for fitness tracking, heart rate monitoring, or GPS navigation, our smartwatches offer the perfect solution for all your needs.</p>
+        <p>Our team of experts is dedicated to staying ahead of the latest trends and technological advancements, ensuring that we always offer the best products available on the market. We value your feedback and strive to continuously improve our offerings based on your needs and preferences.</p>
+        <p>Thank you for choosing Smartwatch Store. We look forward to serving you!</p>
+                <a href="contact.html" class="btn btn-secondary btn-lg">Contact Us</a>
             </div>
-            <div class="related-product">
-                <img src="./related0.jpg" alt="Related Product 1">
-                <p>Related Product 4</p>
-                <p>$149.99</p>
-            </div>
-            <div class="related-product">
-                <img src="./related1.jpg" alt="Related Product 1">
-                <p>Related Product 5</p>
-                <p>$149.99</p>
-            </div>
-            <!-- Add more related products as needed -->
-        </div>
+        </section>
     </main>
 
     <footer class="footer mt-5">
@@ -143,6 +109,9 @@
         </div>
     </footer>
 
-   
+    <!-- Bootstrap and jQuery JS -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
 </body>
 </html>
