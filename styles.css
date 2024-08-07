@@ -1,5 +1,3 @@
-/* styles.css */
-
 /* Basic Reset */
 * {
     margin: 0;
@@ -19,13 +17,16 @@ header {
     text-align: center;
 }
 
-
 nav ul {
     list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
 }
 
 nav ul li {
-    display: inline;
     margin: 0 15px;
 }
 
@@ -56,6 +57,7 @@ main {
 
 .product-images {
     max-width: 600px;
+    width: 100%;
 }
 
 #main-image {
@@ -67,16 +69,19 @@ main {
 .thumbnail-images {
     display: flex;
     justify-content: space-around;
+    flex-wrap: wrap;
 }
 
 .thumbnail-images img {
     width: 100px;
     height: auto;
     cursor: pointer;
+    margin: 5px;
 }
 
 .product-details {
     max-width: 600px;
+    width: 100%;
 }
 
 .product-details h1 {
@@ -132,20 +137,20 @@ button:hover {
     height: auto;
 }
 
-
 .gold-star {
     color: gold;
 }
+
 .footer {
     background-color: #333;
     color: #fff;
     padding: 20px 0;
     text-align: center;
 }
+
 .footer p {
     margin: 0;
 }
-
 
 /* Hero Section */
 .hero {
@@ -213,7 +218,6 @@ button:hover {
     transform: translateY(-10px);
 }
 
-
 /* About Us Section */
 #about {
     background: #f4f4f4;
@@ -231,11 +235,6 @@ button:hover {
     margin-bottom: 20px;
     color: #555;
 }
-
-
-/*sign up section */
-
-
 
 /* Contact Us Section */
 .contact-us {
@@ -339,19 +338,36 @@ button:hover {
     }
 }
 
-
-
+/* Responsive adjustments */
 @media (max-width: 768px) {
+    nav ul {
+        flex-direction: column;
+        align-items: center;
+    }
+
     nav ul li {
-        display: block;
         margin: 10px 0;
     }
 
     .product-page {
         flex-direction: column;
+        align-items: center;
     }
 
     .related-product {
         margin-bottom: 20px;
+    }
+
+    .hero h1 {
+        font-size: 2.5rem;
+    }
+
+    .hero p {
+        font-size: 1.2rem;
+    }
+
+    .hero .btn {
+        font-size: 1rem;
+        padding: 10px 20px;
     }
 }
