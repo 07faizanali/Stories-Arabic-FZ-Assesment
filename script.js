@@ -1,17 +1,15 @@
 
-
-function changeImage(src) {
-    document.getElementById('main-image').src = src;
-}
-
-
 function toggleForm() {
     var loginForm = document.getElementById('loginForm');
     var signupForm = document.getElementById('signupForm');
     loginForm.classList.toggle('active');
     signupForm.classList.toggle('active');
 }
-// Function to add product to cart
+// Function to change the main product image
+function changeImage(src) {
+    document.getElementById('main-image').src = src;
+}
+
 // Function to add product to cart
 function addToCart() {
     const product = {
@@ -37,13 +35,20 @@ function addToCart() {
     localStorage.setItem('cart', JSON.stringify(cart));
     alert('Product added to cart!');
     console.log('Cart:', cart); // Debug log
+
+    // Redirect to cart page
+    window.location.href = 'cart.html';
 }
 
 
-// Function to change the main product image
-function changeImage(imagePath) {
-    document.getElementById('main-image').src = imagePath;
+// Function to update the cart item count in the navbar
+function updateCartCount() {
+    const cart = JSON.parse(localStorage.getItem('cart')) || [];
+    const totalItems = cart.reduce((sum, item) => sum + (item.quantity || 0), 0);
+
+    // Update the cart count in the navbar
+    document.getElementById('cart-count').textContent = totalItems;
 }
 
-// Add event listener to the button
-document.querySelector('.add-to-cart').addEventListener('click', addToCart);
+// Call the function when the page loads
+document.addEventListener('DOMContentLoaded', updateCartCount);
