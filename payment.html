@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Checkout Page</title>
+    <title>Payment Page</title>
     <!-- Bootstrap CSS -->
     <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
@@ -11,17 +11,21 @@
     <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="style/styles.css">
     <style>
-        .checkout-container {
+        .payment-container {
             margin: 20px auto;
             padding: 20px;
         }
-        .order-summary, .billing-details {
+        .payment-form, .order-summary {
             background: #f9f9f9;
             border-radius: 10px;
-            padding: 15px;
+            padding: 20px;
         }
-        .product-thumbnail img {
-            width: 100px;
+        .card-icons img {
+            width: 50px;
+            margin-right: 10px;
+        }
+        .order-summary .product-thumbnail img {
+            width: 80px;
             height: auto;
         }
         .order-total {
@@ -29,16 +33,20 @@
             font-weight: bold;
         }
         @media (max-width: 768px) {
-            .order-summary, .billing-details {
+            .order-summary {
                 margin-top: 20px;
             }
-            .product-thumbnail img {
-                width: 75px;
+            .card-icons img {
+                width: 40px;
+            }
+            .order-summary .product-thumbnail img {
+                width: 60px;
             }
         }
     </style>
 </head>
 <body>
+
 
     <header>
         <nav class="navbar navbar-expand-lg navbar-light bg-light">
@@ -72,37 +80,43 @@
         </nav>
     </header>
 
-    <div class="container checkout-container">
+    <div class="container payment-container">
         <div class="row">
-            <!-- Billing Details Section -->
-            <div class="col-md-6 billing-details">
-                <h3>Billing & Shipping Information</h3>
+            <!-- Payment Form -->
+            <div class="col-md-6 payment-form">
+                <h3>Payment Information</h3>
                 <form>
                     <div class="form-group">
-                        <label for="fullName">Full Name</label>
-                        <input type="text" id="fullName" class="form-control" required>
+                        <label for="cardName">Cardholder's Name</label>
+                        <input type="text" id="cardName" class="form-control" required>
                     </div>
                     <div class="form-group">
-                        <label for="email">Email</label>
-                        <input type="email" id="email" class="form-control" required>
+                        <label for="cardNumber">Card Number</label>
+                        <input type="text" id="cardNumber" class="form-control" required>
                     </div>
                     <div class="form-group">
-                        <label for="address">Shipping Address</label>
-                        <input type="text" id="address" class="form-control" required>
+                        <label for="expiryDate">Expiry Date</label>
+                        <input type="text" id="expiryDate" class="form-control" placeholder="MM/YY" required>
                     </div>
                     <div class="form-group">
-                        <label for="city">City</label>
-                        <input type="text" id="city" class="form-control" required>
+                        <label for="cvv">CVV</label>
+                        <input type="password" id="cvv" class="form-control" required>
                     </div>
                     <div class="form-group">
-                        <label for="postalCode">Postal Code</label>
-                        <input type="text" id="postalCode" class="form-control" required>
+                        <label for="billingAddress">Billing Address</label>
+                        <input type="text" id="billingAddress" class="form-control" required>
                     </div>
-                    <div class="form-group">
-                        <label for="phone">Phone Number</label>
-                        <input type="tel" id="phone" class="form-control" required>
+
+                    <div class="card-icons d-flex">
+                        <img src="https://upload.wikimedia.org/wikipedia/commons/0/04/Visa.svg" alt="Visa">
+                        <img src="https://upload.wikimedia.org/wikipedia/commons/a/a4/Mastercard_2019_logo.svg" alt="Mastercard">
+                        <img src="https://upload.wikimedia.org/wikipedia/commons/c/cb/Rupay-Logo.png" alt="RuPay">
+
                     </div>
-                    <button type="submit" class="btn btn-primary btn-block">Proceed to Payment</button>
+                    
+                    
+
+                    <button type="submit" class="btn btn-primary btn-block mt-4">Submit Payment</button>
                 </form>
             </div>
 
@@ -111,12 +125,23 @@
                 <h3>Your Order Summary</h3>
                 <div class="d-flex justify-content-between align-items-center">
                     <div class="product-thumbnail">
-                        <img src="./images/product5/1.jpg" alt="Product Thumbnail">
+                        <img src="./images/product1/1.webp" alt="Product Thumbnail">
                     </div>
                     <div>
                         <p>Smartwatch XYZ</p>
                         <p>Quantity: 1</p>
                         <p>Price: $199.99</p>
+                    </div>
+                </div>
+                <hr>
+                <div class="d-flex justify-content-between align-items-center">
+                    <div class="product-thumbnail">
+                        <img src="./images/product2/1.jpg" alt="Product Thumbnail">
+                    </div>
+                    <div>
+                        <p>Series 8 Smartwatch</p>
+                        <p>Quantity: 1</p>
+                        <p>Price: $179.99</p>
                     </div>
                 </div>
                 <hr>
@@ -156,6 +181,7 @@
             </div>
         </div>
     </footer>
+
 
 </body>
 </html>
