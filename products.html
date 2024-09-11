@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Product Listing Page</title>
+        <!-- Bootstrap CSS -->
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="style/styles.css">
+    <!-- FontAwesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        .product-card {
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            padding: 10px;
+            margin-bottom: 20px;
+            text-align: center;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        .product-card img {
+            width: 100%;
+            height: auto;
+            object-fit: cover;
+            border-radius: 8px;
+        }
+        .product-card h5 {
+            margin: 10px 0;
+        }
+        .product-card a {
+            text-decoration: none;
+            color: white;
+        }
+        .product-card .btn {
+            background-color: #333;
+        }
+        .product-card .btn:hover {
+            background-color: #555;
+        }
+        .product-card:hover {
+            transform: scale(1.05);
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <nav class="navbar navbar-expand-lg navbar-light bg-light ">
+            <a class="navbar-brand" href="#">Smartwatch Store</a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav mr-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="index.html"><i class="fas fa-home"></i> Home</a>
+                    </li>
+                                      
+                    <li class="nav-item">
+                        <a class="nav-link" href="products.html"><i class="fas fa-shopping-bag"></i> Purchase</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="contact.html"><i class="fas fa-phone"></i> Contact Us</a>
+                    </li>
+                </ul>
+                <ul class="navbar-nav ml-auto">
+                    
+                 
+                    <li class="nav-item">
+                        <a class="nav-link" href="signup.html"><i class="fas fa-sign-in-alt"></i> Login | Sign Up <i class="fas fa-user-plus"></i></a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="cart.html"><i class="fas fa-shopping-cart"></i> Cart
+                            <span id="cart-count" class="badge badge-pill badge-primary">0</span>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+    </header>
+    <div class="container">
+        <h1 class="my-4 text-center">Product Listing</h1>
+        <div class="row">
+            <!-- Product 1 -->
+            <div class="col-md-4 col-sm-6">
+                <div class="product-card">
+                    <img src="./images/product1/1.webp" alt="Product 1">
+                    <h5>Smartwatch ABC</h5>
+                    <p>$199.99</p>
+                    <a href="productdetails.html?productID=1" class="btn btn-primary">View Details</a>
+                </div>
+            </div>
+            <!-- Product 2 -->
+            <div class="col-md-4 col-sm-6">
+                <div class="product-card">
+                    <img src="./images/product2/1.jpg" alt="Product 2">
+                    <h5>Smartwatch DEF</h5>
+                    <p>$179.99</p>
+                    <a href="productdetails.html?productID=2" class="btn btn-primary">View Details</a>
+                </div>
+            </div>
+            <!-- Product 3 -->
+            <div class="col-md-4 col-sm-6">
+                <div class="product-card">
+                    <img src="./images/product3/1.webp" alt="Product 3">
+                    <h5>Smartwatch XYZ</h5>
+                    <p>$149.99</p>
+                    <a href="productdetails.html?productID=3" class="btn btn-primary">View Details</a>
+                </div>
+            </div>
+             <!-- Product 4 -->
+             <div class="col-md-4 col-sm-6">
+                <div class="product-card">
+                    <img src="./images/product4/1.webp" alt="Product 4">
+                    <h5>Smartwatch ABC</h5>
+                    <p>$199.99</p>
+                    <a href="productdetails.html?productID=4" class="btn btn-primary">View Details</a>
+                </div>
+            </div>
+            <!-- Product 5 -->
+            <div class="col-md-4 col-sm-6">
+                <div class="product-card">
+                    <img src="./images/product5/1.jpg" alt="Product 5">
+                    <h5>SKMEI Men's Watch </h5>
+                    <p>$179.99</p>
+                    <a href="productdetails.html?productID=5" class="btn btn-primary">View Details</a>
+                </div>
+            </div>
+            <!-- Product 6 -->
+            <div class="col-md-4 col-sm-6">
+                <div class="product-card">
+                    <img src="./images/product6/1.jpg" alt="Product 6">
+                    <h5>Smartwatch XYZ</h5>
+                    <p>$149.99</p>
+                    <a href="productdetails.html?productID=6" class="btn btn-primary">View Details</a>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+    <footer class="footer mt-5">
+        <div class="container text-center">
+            <div class="row">
+                <div class="col-md-4">
+                    <p>&copy; 2024 Smartwatch Store. All rights reserved.</p>
+                </div>
+                <div class="col-md-4">
+                    <p><i class="fas fa-shield-alt"></i> Secure Checkout</p>
+                </div>
+                <div class="col-md-4">
+                    <p><i class="fas fa-undo-alt"></i> 30-Day Return Policy</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+
+</body>
+</html>
